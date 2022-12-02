@@ -51,6 +51,6 @@ int search_k(LinkList list, int k)
 
 /*
 链表回顾：
-
+见408-DS中的chapter2
 
 */
