@@ -48,3 +48,9 @@ int search_k(LinkList list, int k)
     }
     else return 0;          //查找失败，返回0
 }
+
+/*
+链表回顾：
+
+
+*/
