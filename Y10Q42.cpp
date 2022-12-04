@@ -41,7 +41,7 @@ void Converse(int R[], int n, int p)
 int main()
 {
     int R[10] = {0,1,2,3,4,5,6,7,8,9};
-    Converse(R,10,4);
+    Converse(R,10,6);
     for (int i = 0; i < 10; i++)
     {
         cout<<R[i]<<" ";
