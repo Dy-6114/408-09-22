@@ -23,7 +23,7 @@ typedef struct Lnode
 {
     char data;
     Lnode *next;
-} * LinkList;
+} * LinkList;  //每个结点的数据结构
 
 Lnode *Find_first_common(LinkList str1, LinkList str2)
 {
@@ -33,21 +33,22 @@ Lnode *Find_first_common(LinkList str1, LinkList str2)
     {
         p = p->next;
         len1++;
-    }
+    } //求str1的长度
     while (q != NULL)
     {
         q = q->next;
         len2++;
-    }
+    }//求str1的长度
     for (p = str1; len1 > len2; len1--)
         p = p->next;
     for (q = str2; len1 < len2; len2--)
         q = q->next;
+    //将str1和str2对齐
     while (p->next != NULL && p->next != q->next)
     {
         p = p->next;
         q = q->next;
-    }
+    } //找到q,q指针共同指向的第一个结点
     return p->next;
 }
 /**/
