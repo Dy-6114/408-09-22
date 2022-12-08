@@ -1,4 +1,4 @@
-/*ÌâÄ¿£ºÒÑÖªÒ»¸ö´øÓĞÍ·½áµãµÄµ¥Á´±í£¬½áµã½á¹¹Îª data link¡£
+/*ÌâÄ¿£ºÒÑÖªÒ»¸ö´øÓĞÍ·½áµãµÄµ¥Á´±í£¬½áµã½á¹¹Îª data|link¡£
 ¼ÙÉè£º¸ÃÁ´±íÖ»¸ø³öÁËÍ·Ö¸Õëlist¡£ÔÚ²»¸Ä±äÁ´±íµÄÇ°ÌáÏÂ£¬ÇëÉè¼ÆÒ»¸ö¾¡¿ÉÄÜ¸ßĞ§µÄËã·¨£¬
 ²éÕÒÁ´±íÖĞµ¹ÊıµÚk¸öÎ»ÖÃÉÏµÄ½áµã£¨kÎªÕıÕûÊı£©¡£Èô²éÕÒ³É¹¦£¬Ëã·¨Êä³ö¸Ã½áµãµÄdataÓòµÄÖµ£¬²¢·µ»Ø1£»·ñÔò£¬Ö»·µ»Ø0¡£
 ÒªÇó£º
@@ -15,10 +15,10 @@ pÖ¸ÕëÑØÁ´±íÒÆ¶¯£¬µ±ÒÆ¶¯µ½µÚk¸öÊ±£¬qÖ¸ÕëÓëpÖ¸ÕëÍ¬²½¿ªÊ¼ÒÆ¶¯£¬µ±pÖ¸ÕëÒÆ¶¯µ½×îºóÒ»¸
         £¨4£©pÖ¸ÏòÏÂÒ»¸ö½áµã£¬×ª£¨2£©
         £¨5£©Èôcount=k£¬Ôò²éÕÒ³É¹¦£¬Êä³ödataÓòµÄÖµ£¬·µ»Ø1£»·ñÔò²éÕÒÊ§°Ü£¬·µ»Ø0
 */
-//3.´úÂëÊµÏÖ
+// 3.´úÂëÊµÏÖ
 
-#include<iostream>
-#include<stdio.h>
+#include <iostream>
+#include <stdio.h>
 
 using namespace std;
 
@@ -26,27 +26,29 @@ typedef int ElemType;
 typedef struct LNode
 {
     ElemType data;
-    struct LNode* link;
-}*LinkList;
+    struct LNode *link;
+} LNode, *LinkList;
 
 int search_k(LinkList list, int k)
 {
     LinkList p = list->link;
-    LinkList q = list->link;        //Ö¸ÏòÍ·½áµãºóµÄ½áµã
+    LinkList q = list->link; //Ö¸ÏòÍ·½áµãºóµÄ½áµã
     int count = 0;
-    while (p != NULL)           //±éÀúÖ±µ½×îºóÒ»¸ö½áµã
+    while (p != NULL) //±éÀúÖ±µ½×îºóÒ»¸ö½áµã
     {
-        if(count < k )
-            count ++;        //¼ÆÊı£¬ÈôcountĞ¡ÓÚk, Ö»ÒÆ¶¯p
-        else q = q->link;    //p£¬qÒ»ÆğÒÆ¶¯
+        if (count < k)
+            count++; //¼ÆÊı£¬ÈôcountĞ¡ÓÚk, Ö»ÒÆ¶¯p
+        else
+            q = q->link; // p£¬qÒ»ÆğÒÆ¶¯
         p = p->link;
     }
     if (count = k)
     {
-        cout<<q->data;       //²éÕÒ³É¹¦£¬Êä³ödataÖµ£¬·µ»Ø1
+        cout << q->data; //²éÕÒ³É¹¦£¬Êä³ödataÖµ£¬·µ»Ø1
         return 1;
     }
-    else return 0;          //²éÕÒÊ§°Ü£¬·µ»Ø0
+    else
+        return 0; //²éÕÒÊ§°Ü£¬·µ»Ø0
 }
 
 /*
