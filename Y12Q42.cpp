@@ -22,8 +22,8 @@ using namespace std;
 typedef struct Lnode
 {
     char data;
-    Lnode *next;
-} * LinkList;  //每个结点的数据结构
+    struct Lnode *next;
+} Lnode, *LinkList; //每个结点的数据结构
 
 Lnode *Find_first_common(LinkList str1, LinkList str2)
 {
@@ -38,7 +38,7 @@ Lnode *Find_first_common(LinkList str1, LinkList str2)
     {
         q = q->next;
         len2++;
-    }//求str1的长度
+    } //求str1的长度
     for (p = str1; len1 > len2; len1--)
         p = p->next;
     for (q = str2; len1 < len2; len2--)
