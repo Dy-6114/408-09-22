@@ -1,24 +1,24 @@
-/*Ò»¸ö³¤¶ÈÎªLµÄÉýÐòÐòÁÐS£¬´¦ÔÚµÚL/2¸öÎ»ÖÃµÄÊý³ÉÎªSµÄÖÐÎ»Êý¡£ÀýÈç£¬S1=(11,13,15,17,19)µÄÖÐÎ»ÊýÊÇ15¡£
-Á½¸öÐòÁÐµÄÖÐÎ»ÊýÊÇº¬ËûÃÇËùÓÐÔªËØµÄÉýÐòÐòÁÐµÄÖÐÎ»Êý¡£ÏÖÔÚÓÐÁ½¸öµÈ³¤ÉýÐòÐòÁÐA,B£¬
-ÊÔÉè¼ÆÒ»¸öÔÚÊ±¼äºÍ¿Õ¼äÁ½·½Ãæ¶¼¾¡¿ÉÄÜ¸ßÐ§µÄËã·¨£¬ÕÒ³öÁ½¸öÐòÁÐAºÍBµÄÖÐÎ»Êý¡£
-ÒªÇó£º
-1.¸ø³öËã·¨µÄ»ù±¾Éè¼ÆË¼Ïë
-2.¸ù¾ÝÉè¼ÆË¼Ïë£¬²ÉÓÃc,c++,JavaÃèÊöËã·¨£¬¹Ø¼üÖ®´¦¸ø³ö×¢ÊÍ
-3.ËµÃ÷Ëã·¨µÄÊ±¼ä¸´ÔÓ¶ÈºÍ¿Õ¼ä¸´ÔÓ¶È
+/*ä¸€ä¸ªé•¿åº¦ä¸ºLçš„å‡åºåºåˆ—Sï¼Œå¤„åœ¨ç¬¬L/2ä¸ªä½ç½®çš„æ•°æˆä¸ºSçš„ä¸­ä½æ•°ã€‚ä¾‹å¦‚ï¼ŒS1=(11,13,15,17,19)çš„ä¸­ä½æ•°æ˜¯15ã€‚
+ä¸¤ä¸ªåºåˆ—çš„ä¸­ä½æ•°æ˜¯å«ä»–ä»¬æ‰€æœ‰å…ƒç´ çš„å‡åºåºåˆ—çš„ä¸­ä½æ•°ã€‚çŽ°åœ¨æœ‰ä¸¤ä¸ªç­‰é•¿å‡åºåºåˆ—A,Bï¼Œ
+è¯•è®¾è®¡ä¸€ä¸ªåœ¨æ—¶é—´å’Œç©ºé—´ä¸¤æ–¹é¢éƒ½å°½å¯èƒ½é«˜æ•ˆçš„ç®—æ³•ï¼Œæ‰¾å‡ºä¸¤ä¸ªåºåˆ—Aå’ŒBçš„ä¸­ä½æ•°ã€‚
+è¦æ±‚ï¼š
+1.ç»™å‡ºç®—æ³•çš„åŸºæœ¬è®¾è®¡æ€æƒ³
+2.æ ¹æ®è®¾è®¡æ€æƒ³ï¼Œé‡‡ç”¨c,c++,Javaæè¿°ç®—æ³•ï¼Œå…³é”®ä¹‹å¤„ç»™å‡ºæ³¨é‡Š
+3.è¯´æ˜Žç®—æ³•çš„æ—¶é—´å¤æ‚åº¦å’Œç©ºé—´å¤æ‚åº¦
 */
 
-/*×îÓÅ½â£º
-ÌâÄ¿·ÖÎö£º·Ö±ðÇóÁ½¸öÐòÁÐµÄÖÐÎ»Êýa,b×ö±È
-        Èôa==b£¬ÔòÖÐÎ»Êý¾ÍÊÇa
-        Èôa<bÔòÖÐÎ»ÊýÔÚ£¨a£¬b£©Ö®¼ä
-        Èôa>bÔòÖÐÎ»ÊýÔÚ£¨b£¬a£©Ö®¼ä
-1.»ù±¾Éè¼ÆË¼Ïë£ºÈôa==b£¬ÔòÖÐÎ»Êý¾ÍÊÇa
-        Èôa<b£¬ÉáÆúÐòÁÐAÖÐ½ÏÐ¡µÄÒ»°ë£¬Í¬Ê±ÉáÆúÐòÁÐBÖÐ½Ï´óµÄÒ»°ë£¬ÒªÇóÉáÆúµÄ³¤¶ÈÏàµÈ
-        Èôa>b£¬ÉáÆúÐòÁÐAÖÐ½Ï´óµÄÒ»°ë£¬Í¬Ê±ÉáÆúÐòÁÐBÖÐ½ÏÐ¡µÄÒ»°ë£¬ÒªÇóÉáÆúµÄ³¤¶ÈÏàµÈ
-        ÔÚ±£ÁôµÄÁ½¸öÐòÁÐÖÐÖØ¸´Ç°Èý²½£¬Ö±µ½Á½¸öÐòÁÐÖÐÖ»º¬Ò»¸öÔªËØÎªÖ¹£¬½ÏÐ¡Õß¼´ÎªÖÐÎ»Êý
-2.Ëã·¨ÊµÏÖ£ºÈçÏÂ
-3.Ê±¼ä¸´ÔÓ¶È£ºO(n)
-¿Õ¼ä¸´ÔÓ¶È£ºO(1)
+/*æœ€ä¼˜è§£ï¼š
+é¢˜ç›®åˆ†æžï¼šåˆ†åˆ«æ±‚ä¸¤ä¸ªåºåˆ—çš„ä¸­ä½æ•°a,båšæ¯”
+        è‹¥a==bï¼Œåˆ™ä¸­ä½æ•°å°±æ˜¯a
+        è‹¥a<båˆ™ä¸­ä½æ•°åœ¨ï¼ˆaï¼Œbï¼‰ä¹‹é—´
+        è‹¥a>båˆ™ä¸­ä½æ•°åœ¨ï¼ˆbï¼Œaï¼‰ä¹‹é—´
+1.åŸºæœ¬è®¾è®¡æ€æƒ³ï¼šè‹¥a==bï¼Œåˆ™ä¸­ä½æ•°å°±æ˜¯a
+        è‹¥a<bï¼Œèˆå¼ƒåºåˆ—Aä¸­è¾ƒå°çš„ä¸€åŠï¼ŒåŒæ—¶èˆå¼ƒåºåˆ—Bä¸­è¾ƒå¤§çš„ä¸€åŠï¼Œè¦æ±‚èˆå¼ƒçš„é•¿åº¦ç›¸ç­‰
+        è‹¥a>bï¼Œèˆå¼ƒåºåˆ—Aä¸­è¾ƒå¤§çš„ä¸€åŠï¼ŒåŒæ—¶èˆå¼ƒåºåˆ—Bä¸­è¾ƒå°çš„ä¸€åŠï¼Œè¦æ±‚èˆå¼ƒçš„é•¿åº¦ç›¸ç­‰
+        åœ¨ä¿ç•™çš„ä¸¤ä¸ªåºåˆ—ä¸­é‡å¤å‰ä¸‰æ­¥ï¼Œç›´åˆ°ä¸¤ä¸ªåºåˆ—ä¸­åªå«ä¸€ä¸ªå…ƒç´ ä¸ºæ­¢ï¼Œè¾ƒå°è€…å³ä¸ºä¸­ä½æ•°
+2.ç®—æ³•å®žçŽ°ï¼šå¦‚ä¸‹
+3.æ—¶é—´å¤æ‚åº¦ï¼šO(n)
+ç©ºé—´å¤æ‚åº¦ï¼šO(1)
 */
 
 #include <iostream>
@@ -27,8 +27,8 @@ using namespace std;
 int M_Search(int A[], int B[], int n)
 {
     int s1 = 0, d1 = n - 1, m1, s2 = 0, d2 = n - 1, m2;
-    //·Ö±ð±íÊ¾Á½¸öÐòÁÐµÄÊ×Î» Ä©Î» ÖÐÎ»
-    while (s1<d1)
+    // åˆ†åˆ«è¡¨ç¤ºä¸¤ä¸ªåºåˆ—çš„é¦–ä½ æœ«ä½ ä¸­ä½
+    while (s1 < d1)
     {
         m1 = (s1 + d1) / 2;
         m2 = (s2 + d2) / 2;
@@ -38,62 +38,66 @@ int M_Search(int A[], int B[], int n)
         {
             s1 = m1;
             d2 = m2;
-            if (d1-s1 != d2-s2)
+            if (d1 - s1 != d2 - s2)
                 s1++;
         }
         if (A[m1] > B[m2])
         {
             d1 = m1;
-            s2= m2;
-            if (d1-s1 != d2-s2)
+            s2 = m2;
+            if (d1 - s1 != d2 - s2)
                 s2++;
         }
     }
     return A[s1] < B[s2] ? A[s1] : B[s2];
 }
 
-
 /*
-±©Á¦½â·¨£º·ÅÈëÐÂÊý×éÖÐ£¬È»ºó¿ìÅÅ£¬Êä³öÐÂÊý×éµÄµÚn-1¸ö
+æš´åŠ›è§£æ³•ï¼šæ”¾å…¥æ–°æ•°ç»„ä¸­ï¼Œç„¶åŽå¿«æŽ’ï¼Œè¾“å‡ºæ–°æ•°ç»„çš„ç¬¬n-1ä¸ª
 */
 
 void Qsort(int A[], int l, int r)
 {
-    if (l >= r) return;
-    int i=l,j=r;
-    //°ÑaÊý×éÖÐËæ»úÒ»¸öÔªËØºÍA[l]½»»»    //¿ìÅÅÓÅ»¯
+    if (l >= r)
+        return;
+    int i = l, j = r;
+    // æŠŠaæ•°ç»„ä¸­éšæœºä¸€ä¸ªå…ƒç´ å’ŒA[l]äº¤æ¢    //å¿«æŽ’ä¼˜åŒ–
     int key = A[l];
-    while(i<j){
-        while (i<j && A[j] >= key) j--;
+    while (i < j)
+    {
+        while (i < j && A[j] >= key)
+            j--;
         A[i] = A[j];
-        while (i<j && A[i] <= key) i++;
-        A[j] =A[i];
+        while (i < j && A[i] <= key)
+            i++;
+        A[j] = A[i];
     }
     A[i] = key;
-    //cout << l << ' ' << i - 1 << ' ' << i + 1 << ' ' << r << endl;
-    Qsort(A,l,i-1);
-    Qsort(A,i+1,r);
+    // cout << l << ' ' << i - 1 << ' ' << i + 1 << ' ' << r << endl;
+    Qsort(A, l, i - 1);
+    Qsort(A, i + 1, r);
 }
 
-void ans(int A[],int B[],int n){
+void ans(int A[], int B[], int n)
+{
     int C[100];
     for (int i = 0; i < n; i++)
     {
-        C[i]=A[i];
-        C[n+i]= B[i];
+        C[i] = A[i];
+        C[n + i] = B[i];
     }
 
-    Qsort(C,0,2*n-1);
-    cout<<C[n-1];
+    Qsort(C, 0, 2 * n - 1);
+    cout << C[n - 1];
 }
 
-//test
+// test
 int main()
 {
     int A[6] = {1, 3, 5, 7, 9, 12};
     int B[6] = {0, 2, 4, 6, 8, 11};
-    cout<<"±©Á¦½â";
-    ans(A,B,6);
+    cout << "æš´åŠ›è§£";
+    ans(A, B, 6);
     int mid_premium = M_Search(A, B, 6);
-    cout <<"×îÓÅ½â"<< mid_premium;
+    cout << "æœ€ä¼˜è§£" << mid_premium;
 }
