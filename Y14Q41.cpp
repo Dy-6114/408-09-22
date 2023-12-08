@@ -24,7 +24,7 @@ typedef struct BiTNode
 
 int wpl_PreOrder(BiTree root, int deep)
 {
-    static int wpl = 0;
+    static int wpl = 0;  //wpl变全局变量
     if (root->lchild != NULL)
         wpl_PreOrder(root->lchild, deep + 1);
     if (root->rchild != NULL)
